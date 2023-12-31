@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlcg8f1l45lgn"]
+
+[ext_resource type="Texture2D" uid="uid://6qo8kjrcqkrk" path="res://art/player-walk-1.png" id="1_3vhtd"]
+[ext_resource type="Script" path="res://player.gd" id="2_geuoj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66aun"]
+radius = 14.0
+height = 38.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("2_geuoj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_66aun")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_3vhtd")
