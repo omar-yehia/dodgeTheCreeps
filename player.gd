@@ -7,8 +7,17 @@ func getDirection():
 	return direction
 	 
 func movement(delta,direction):
-	#var direction=getDirection()		
 	self.position+=direction*SPEED*delta
+	if self.position.x<0:
+		self.position.x=0
+	elif self.position.x>1150:
+		self.position.x=1150
+	elif self.position.y<0:
+		self.position.y=0
+	elif self.position.y>1150:
+		self.position.y=1150
+			
+ 	
 
 func _process(delta):
 	var direction=getDirection()
