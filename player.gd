@@ -1,24 +1,18 @@
 extends CharacterBody2D
 var SPEED = 400
 @onready var runner = $runner
- 
+
+@onready var rect=get_viewport_rect().size
+	
 func getDirection():
 	var direction=Input.get_vector("move_left","move_right","move_up","move_down")
 	return direction
-	 
+
 func movement(delta,direction):
 	self.position+=direction*SPEED*delta
-	if self.position.x<0:
-		self.position.x=0
-	elif self.position.x>1150:
-		self.position.x=1150
-	elif self.position.y<0:
-		self.position.y=0
-	elif self.position.y>1150:
-		self.position.y=1150
-			
- 	
-
+	position.x=clamp(position.x,0,rect.x-20)
+	position.y=clamp(position.y,0,rect.y-20)
+	
 func _process(delta):
 	var direction=getDirection()
 	runner.flip_h=direction.x<0
