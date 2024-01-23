@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvn2v5n27fgbh"]
+
+[ext_resource type="PackedScene" uid="uid://dlcg8f1l45lgn" path="res://player.tscn" id="1_2bmys"]
+[ext_resource type="PackedScene" uid="uid://yjkyllmodbpa" path="res://floor.tscn" id="2_vfuy1"]
+[ext_resource type="PackedScene" uid="uid://bm0u8271pw48n" path="res://enemySwimming.tscn" id="3_bpmp1"]
+[ext_resource type="PackedScene" uid="uid://iqoi23bxbdoh" path="res://enemyWalking.tscn" id="4_m2hmi"]
+[ext_resource type="PackedScene" uid="uid://bltl4lqkw04dw" path="res://enemyFlying.tscn" id="5_yw03p"]
+[ext_resource type="Script" path="res://enemyFlying.gd" id="6_a6wpe"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(395, 170)
+
+[node name="player" parent="." instance=ExtResource("1_2bmys")]
+position = Vector2(124, 117)
+
+[node name="floor1" parent="." instance=ExtResource("2_vfuy1")]
+position = Vector2(174, 337)
+
+[node name="floor2" parent="." instance=ExtResource("2_vfuy1")]
+position = Vector2(686, 178)
+
+[node name="enemySwimming" parent="." instance=ExtResource("3_bpmp1")]
+position = Vector2(-110, 171)
+
+[node name="enemyWalking" parent="." instance=ExtResource("4_m2hmi")]
+position = Vector2(564, 28)
+
+[node name="enemyFlying" parent="." instance=ExtResource("5_yw03p")]
+position = Vector2(-237, -65)
+script = ExtResource("6_a6wpe")

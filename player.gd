@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Area2D
 var SPEED = 400
 @onready var runner = $runner
 
@@ -23,7 +23,13 @@ func _process(delta):
 	else:
 		runner.stop()
  
+func die():
+	self.queue_free()
+	
 
 #func _physics_process(delta):
 	#movement(delta)
- 
+  
+func _on_body_entered(body):
+	die()
+	print('body',body)	
